@@ -7,4 +7,4 @@ git clone https://github.com/Eolinx/Helix.git
 cp ./Helix/.devops/docker/filesystem/app/loader.php ./Helix/loader.php
 
 cp .env-example .env
-docker-compose --env-file .env up 
+docker-compose --env-file=./.env up 
