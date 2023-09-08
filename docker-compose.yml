@@ -27,6 +27,4 @@ services:
     #expose:
     #  - '3306'
     volumes:
-      - db-volume:./storage
-volumes:
-  db-volume:
+      - ./storage/db:/var/lib/mysql
