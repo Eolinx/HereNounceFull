@@ -7,6 +7,11 @@ services:
      - "${PORT_HERENOUNCE}:80"
     volumes:
      - ./HereNounce/:/app
+    environment:
+      HERENOUNCE_HOSTNAME: '${HERENOUNCE_HOSTNAME}'
+      DB_USER: '${DB_USER}'
+      DB_PASS: '${DB_PASS}'
+      DB_NAME: '${DB_NAME}'
   helix:
     build:
       context: ./Helix/
@@ -14,6 +19,9 @@ services:
      - "${PORT_HELIX}:80"
     volumes:
      - ./Helix/:/app
+    environment:
+      HERENOUNCE_DOMAIN: '${HERENOUNCE_DOMAIN}'
+      HERENOUNCE_HOSTNAME: '${HERENOUNCE_HOSTNAME}'
   db:
     image: mysql:5.7
     restart: always
