@@ -2,14 +2,14 @@ version: '3.2'
 services:
   herenounce:
     build:
-      context: ./
+      context: ./HereNounce/
     ports:
      - "${PORT_HERENOUNCE}:80"
     volumes:
      - ./HereNounce/:/app
   helix:
     build:
-      context: ./
+      context: ./Helix/
     ports:
      - "${PORT_HELIX}:80"
     volumes:
