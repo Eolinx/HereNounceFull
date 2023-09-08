@@ -4,24 +4,24 @@ services:
     build:
       context: ./
     ports:
-     - "8010:80"
+     - "${PORT_HERENOUNCE}:80"
     volumes:
      - ./HereNounce/:/app
   helix:
     build:
       context: ./
     ports:
-     - "8011:80"
+     - "${PORT_HELIX}:80"
     volumes:
      - ./Helix/:/app
   db:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: '${DB_NAME}'
+      MYSQL_USER: '${DB_USER}'
+      MYSQL_PASSWORD: '${DB_PASS}'
+      MYSQL_ROOT_PASSWORD: '${DB_PASS}'
     #ports:
     #  - '3306:3306'
     #expose:
